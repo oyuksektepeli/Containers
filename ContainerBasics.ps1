@@ -1,3 +1,6 @@
+#to see docker commands
+docker -h | more
+
 #To see docker verison
 docker verison
 

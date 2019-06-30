@@ -30,3 +30,11 @@ $ sudo apt-get update
 #install docker
 $ sudo apt-get install docker-ce docker-ce-cli containerd.io
 
+#see the docker version 
+docker version 
+
+#add custom user to docker group
+sudo usermod -a -G docker user
+
+#verify the membership
+grep docker /etc/group 

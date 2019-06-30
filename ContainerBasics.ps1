@@ -48,6 +48,7 @@ docker container ls -a
 
 #to execute command on container (executing sh command)
 docker container exec -it devcontainer sh
+docker container exec -it devcontainer /bin/bash
 
 #to see live resource usage from container
 docker container stats container1

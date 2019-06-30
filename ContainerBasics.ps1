@@ -1,5 +1,6 @@
 #to see docker commands
 docker -h | more
+docker container --help
 
 #To see docker verison
 docker verison

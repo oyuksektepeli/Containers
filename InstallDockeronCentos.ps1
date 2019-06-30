@@ -12,7 +12,7 @@ sudo yum -y install docker-ce
 sudo systemctl start docker && sudo systemctl enable docker
 
 #Add customuser to the docker group
-sudo usermod -aG docker cloud_user
+sudo usermod -aG docker custom_user
 
 #logout and login again to get permissions
 

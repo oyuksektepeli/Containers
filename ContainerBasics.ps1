@@ -25,8 +25,12 @@ docker pull ubuntu:19.10
 #create and run container from image 
 # 'd' for deattached mode 'it' for interactive mode
 docker container run ubuntu
+docker container run -P -d nginx
 docker run -d -p 8080:80 --name ubuntu1 ubuntu
 docker run it --name temp ubuntu
+
+#inspect docker container
+docker inspect container1
 
 #attach to existing and running container
 docker attach <containerid>
@@ -44,6 +48,9 @@ docker container ls -a
 
 #to execute command on container (executing sh command)
 docker container exec -it devcontainer sh
+
+#to see live resource usage from container
+docker container stats container1
 
 #to see docker volumes
 dokcer volume ls

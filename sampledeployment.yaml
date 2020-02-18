@@ -30,7 +30,7 @@ metadata:
   name: blazordemo-service
 spec:
   selector:
-    app: blazor
+    app: blazordemo
   ports:
     - port: 80
   type: LoadBalancer

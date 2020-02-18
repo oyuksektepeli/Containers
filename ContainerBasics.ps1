@@ -27,8 +27,8 @@ docker pull ubuntu:19.10
 # 'd' for deattached mode 'it' for interactive mode
 docker container run ubuntu
 docker container run -P -d nginx
-docker run -d -p 8080:80 --name ubuntu1 ubuntu
-docker run it --name temp ubuntu
+docker container run -d -p 8080:80 --name ubuntu1 ubuntu
+docker container run -it --name temp ubuntu
 
 #inspect docker container
 docker inspect container1
@@ -55,7 +55,7 @@ docker container exec -it devcontainer /bin/bash
 docker container stats container1
 
 #to see docker volumes
-dokcer volume ls
+docker volume ls
 
 #to create docker volumes 
 docker volume create devvolume

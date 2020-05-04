@@ -10,7 +10,7 @@ docker info
 
 #to see local docker images
 docker images
-docker images ls
+docker image ls
 #show images values without trunc (ex. see the full image id)
 docker images --no-trunc
 

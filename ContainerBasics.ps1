@@ -3,7 +3,7 @@ docker -h | more
 docker container --help
 
 #To see docker verison
-docker verison
+docker version
 
 #detailed docker information
 docker info

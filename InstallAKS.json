@@ -1,0 +1,68 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        
+        },
+    "functions": [],
+    "variables": {},
+    "resources": [
+        {
+            "name": "azurenuggets",
+            "type": "Microsoft.ContainerService/managedClusters",
+            "apiVersion": "2020-02-01",
+            "location": "[resourceGroup().location]",
+            "properties": {
+                "kubernetesVersion": "1.16.10",
+                "dnsPrefix": "azurenuggets",
+                "agentPoolProfiles": [
+                    {
+                        "name": "agentpool",
+                        "count": 2,
+                        "vmSize": "Standard_B2s",
+                        "osType": "Linux",
+                        "storageProfile": "ManagedDisks",
+                        "type" : "VirtualMachineScaleSets",
+                        "maxCount": 3,
+                        "minCount": 1,
+                        "osDiskSizeGB": 64,
+                        "enableAutoScaling" : true,
+                        "maxPods" : 100,
+                        "orchestratorVersion": "1.16.10"                       
+                        
+                        
+                    }
+                ],
+                "linuxProfile": {
+                    "adminUsername": "adminUserName",
+                    "ssh": {
+                        "publicKeys": [
+                            {
+                                "keyData": "keyData"
+                            }
+                        ]
+                    }
+                },
+                "servicePrincipalProfile": {
+                    "clientId": "servicePrincipalAppId",
+                    "secret": "servicePrincipalAppPassword"
+                },
+                "enableRBAC": true,
+                "networkProfile" : {
+                    "dnsServiceIP": "10.200.128.10",
+                    "serviceCidr": "10.200.128.0/17",
+                    "dockerBridgeCidr" : "172.17.0.1/16",
+                    "outboundType": "loadBalancer",
+                    "networkPlugin" : "azure",
+                    "loadBalancerSku" : "standard",
+                    "loadBalancerProfile" : {
+                        "managedOutboundIPs" : {
+                            "count" : 1
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "outputs": {}
+}   

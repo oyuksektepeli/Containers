@@ -1,0 +1,26 @@
+#to login Azure with Docker commands
+docker login Azure
+
+#Create docker context for azure subscription 
+docker context create aci myacicontext --subscription-id <subs-id> --resource-group <rg-name> --location <location> 
+
+#to run container on ACI
+docker --context acimvpsubs run -p 80:80 nginx
+
+#or to change context
+docker context use <context-name>
+
+#to run container
+docker run -p 80:80 nginx
+
+#to view logs 
+docker logs <container-id>
+
+#to execute command in running container
+docker exec -t <container-id> COMMAND
+
+#to stop container 
+docker stop <container-id>
+
+#ro remove container from ACI
+docker rm <container-id>
